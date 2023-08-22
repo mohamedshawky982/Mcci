@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "252421067361",
+    "project_id": "mcci-43a4d",
+    "storage_bucket": "mcci-43a4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252421067361:android:7aa4fe53911649255fd020",
+        "android_client_info": {
+          "package_name": "com.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252421067361-kfblh7l1pe0qmp9lga1rivivlm8ek4o2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB91jKk6CzCVRpsOr8PufjNtJhCC4i_-P8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252421067361-kfblh7l1pe0qmp9lga1rivivlm8ek4o2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "252421067361-7kblo69j7lsqp8622p8k8i16ck5edn4p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.FinalProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
