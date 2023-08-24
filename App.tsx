@@ -1,10 +1,19 @@
 import * as React from 'react';
-import {Button, StyleSheet, Image, View, Text} from 'react-native';
+import {
+  Button,
+  StyleSheet,
+  Image,
+  View,
+  Text,
+  PermissionsAndroid,
+  Platform,
+} from 'react-native';
 
 import Disc from './discount/disbanner';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import messaging from '@react-native-firebase/messaging';
 
 function DetailsScreen() {
   return (
@@ -43,6 +52,25 @@ function DetailsScreen() {
 const Stack = createNativeStackNavigator();
 
 function App() {
+  React.useEffect(() => {
+    requestNotificationPermission();
+  }, []);
+  const requestNotificationPermission = async () => {
+    if (Platform.OS === 'ios') {
+      const authStatus = await messaging().requestPermission();
+      const enabled =
+        authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+        authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+      if (enabled) {
+        console.log('Authorization status:', authStatus);
+      }
+    } else {
+      PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
+      );
+    }
+  };
   return (
     <NavigationContainer>
       <Stack.Navigator>
